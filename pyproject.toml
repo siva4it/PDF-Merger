@@ -38,16 +38,16 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-username/PDF-Merger"
-Documentation = "https://github.com/your-username/PDF-Merger#readme"
-Repository = "https://github.com/your-username/PDF-Merger"
-"Bug Tracker" = "https://github.com/your-username/PDF-Merger/issues"
+Homepage = "https://github.com/siva4it/PDF-Merger"
+Documentation = "https://github.com/siva4it/PDF-Merger#readme"
+Repository = "https://github.com/siva4it/PDF-Merger"
+"Bug Tracker" = "https://github.com/siva4it/PDF-Merger/issues"
 
 [project.scripts]
 pdf-merger = "pdf_merger:main"
 
-[tool.setuptools]
-packages = ["pdf_merger"]
+[tool.setuptools.packages.find]
+where = ["src"]
 
 [tool.setuptools.package-data]
 "*" = ["*.txt", "*.md", "*.bat"] 

@@ -47,15 +47,15 @@ jobs:
     
     - name: Test with pytest
       run: |
-        pytest
+        pytest tests/
     
     - name: Test PDF Merger functionality
       run: |
         python tests/test_pdf_merger.py
     
-    - name: Test script import
+    - name: Test package import
       run: |
-        python -c "from src.pdf_merger import main; print('Import successful')"
+        python -c "import sys; sys.path.insert(0, 'src'); from pdf_merger import main; print('Package import successful')"
     
     - name: Test PyPDF2 import
       run: |
