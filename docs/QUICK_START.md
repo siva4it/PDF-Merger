@@ -1,71 +1,131 @@
-# Quick Start Guide
+# Quick Start Guide - PDF Merger Tool
 
-## 🚀 Get Started in 3 Steps
+Get up and running with the PDF Merger Tool in minutes!
 
-### 1. Install Dependencies
+## 🚀 Installation
+
+### Step 1: Clone the Repository
 ```bash
-pip install PyPDF2
+git clone https://github.com/siva4it/PDF-Merger.git
+cd PDF-Merger
 ```
 
-### 2. Run the Script
-Choose one of these methods:
-
-**Method A: Command Line**
+### Step 2: Install Dependencies
 ```bash
-python pdf_merger.py
+pip install -r requirements.txt
 ```
 
-**Method B: Windows Batch File (Double-click)**
-- Double-click `run_pdf_merger.bat`
-
-**Method C: Test First**
+### Step 3: Run the Tool
 ```bash
-python test_pdf_merger.py
+python run_pdf_merger.py
 ```
 
-### 3. Follow the Prompts
-The script will ask you for:
-- Multiple PDF file paths (press Enter when done adding files)
-- Output folder path (optional - press Enter for current directory)
-- Output filename
+## 📖 Basic Usage
 
-**Example:**
+### Running the Tool
+
+**Method 1: Simple Launcher (Recommended)**
+```cmd
+python run_pdf_merger.py
 ```
+
+**Method 2: Windows Batch File**
+```cmd
+run_pdf_merger.bat
+```
+
+**Method 3: As a Module (from project root)**
+```cmd
+python -m src.pdf_merger
+```
+
+### Step-by-Step Process
+
+1. **Start the tool**
+   ```bash
+   python run_pdf_merger.py
+   ```
+
+2. **Add PDF files**
+   - Enter the path to each PDF file
+   - Press Enter without a filename when done
+   - Minimum 2 files required
+
+3. **Specify output settings**
+   - Enter output folder path (optional)
+   - Provide output filename
+
+4. **Review and confirm**
+   - Check the summary
+   - Confirm the merge operation
+
+## 🎯 Example Session
+
+```
+==================================================
+PDF Merger Tool
+==================================================
+
 Enter path to PDF file #1: document1.pdf
+✓ Added: document1.pdf (15 pages, 2.45 MB)
+
 Enter path to PDF file #2: document2.pdf
-Enter path to PDF file #3: document3.pdf
-Enter path to PDF file #4: [press Enter to finish]
+✓ Added: document2.pdf (12 pages, 1.78 MB)
+
+Enter path to PDF file #3: [press Enter]
+
+Files to merge: 2
+  1. document1.pdf (15 pages)
+  2. document2.pdf (12 pages)
 
 Enter output folder path (press Enter for current directory): merged_pdfs
+✓ Created output folder: 'merged_pdfs'
+
 Enter the name for the merged PDF file: combined.pdf
+
+Output will be saved to: 'merged_pdfs/combined.pdf'
+
+Merging PDFs...
+✓ Successfully merged 2 files into 'merged_pdfs/combined.pdf'
+✓ Total pages: 27
+✓ File size: 4.23 MB
 ```
 
-## 📁 File Structure
-```
-PDF-Merger/
-├── pdf_merger.py          # Main script
-├── requirements.txt       # Dependencies
-├── run_pdf_merger.bat    # Windows launcher
-├── test_pdf_merger.py    # Test script
-├── README.md             # Full documentation
-└── QUICK_START.md        # This file
+## 🛠️ Testing
+
+Run the test suite to verify everything is working:
+```bash
+python tests/test_pdf_merger.py
 ```
 
-## ✨ New Features
-- **Multiple PDFs**: Merge any number of PDF files (minimum 2)
-- **Smart Input**: Add files one by one, press Enter when done
-- **Duplicate Detection**: Prevents adding the same file twice
-- **Page Count**: Shows total pages across all files
-- **Detailed Summary**: File sizes, page counts, and merge statistics
-- **Custom Output Folder**: Specify where to save the merged PDF
-- **Auto Folder Creation**: Creates output folders automatically
-- **Permission Validation**: Checks write access before merging
+## 🆘 Troubleshooting
 
-## 📂 Output Folder Options
-- **Current Directory**: Press Enter to save in the same folder as the script
-- **Custom Folder**: Enter any folder path (relative or absolute)
-- **Auto Creation**: Folders are created automatically if they don't exist
-- **Permission Check**: Write access is validated before starting
+### Common Issues
 
-## ✅ Ready to Use!
-Your PDF merger is now ready to run. Just execute one of the commands above and follow the prompts! 
+**"No module named 'src'"**
+- Make sure you're in the project root directory
+- Use `python run_pdf_merger.py` instead
+
+**"PyPDF2 not found"**
+- Install dependencies: `pip install -r requirements.txt`
+
+**"Permission denied"**
+- Check that you have write permissions in the output directory
+- Try a different output location
+
+### Getting Help
+
+- Check the [main README](../README.md) for detailed documentation
+- Report issues on [GitHub](https://github.com/siva4it/PDF-Merger/issues)
+- Review the [contributing guidelines](../CONTRIBUTING.md)
+
+## 🎉 Next Steps
+
+- Try merging different types of PDF files
+- Experiment with custom output folders
+- Check out the [examples](../examples/) directory
+- Contribute to the project!
+
+---
+
+**Happy PDF merging! 📄✨** 

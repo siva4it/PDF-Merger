@@ -1,13 +1,22 @@
 # PDF Merger Tool
 
 [![Python 3.6+](https://img.shields.io/badge/python-3.6+-blue.svg)](https://www.python.org/downloads/)
-[![PyPDF2](https://img.shields.io/badge/PyPDF2-3.0.0+-green.svg)](https://pypi.org/project/PyPDF2/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![GitHub stars](https://img.shields.io/github/stars/siva4it/PDF-Merger.svg)](https://github.com/siva4it/PDF-Merger/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/siva4it/PDF-Merger.svg)](https://github.com/siva4it/PDF-Merger/network)
-[![GitHub issues](https://img.shields.io/github/issues/siva4it/PDF-Merger.svg)](https://github.com/siva4it/PDF-Merger/issues)
+[![PyPI version](https://badge.fury.io/py/pdf-merger-tool.svg)](https://badge.fury.io/py/pdf-merger-tool)
+[![GitHub release](https://img.shields.io/github/release/siva4it/PDF-Merger.svg)](https://github.com/siva4it/PDF-Merger/releases)
 
-A professional, feature-rich Python tool for merging multiple PDF files into a single PDF with advanced error handling and user-friendly interface.
+A professional, feature-rich Python tool for merging multiple PDF files into a single PDF with advanced features like custom output folders, duplicate detection, and comprehensive error handling.
+
+## ✨ Features
+
+- **Multiple PDF Support**: Merge any number of PDF files (minimum 2)
+- **Smart Input Handling**: Add files one by one with validation
+- **Duplicate Detection**: Automatically detects and prevents duplicate files
+- **Page Count Reporting**: Shows total pages and file sizes
+- **Custom Output Folders**: Specify any output directory with automatic creation
+- **Permission Validation**: Checks write permissions before merging
+- **Professional Error Handling**: Comprehensive error messages and recovery
+- **Cross-Platform**: Works on Windows, macOS, and Linux
 
 ## 🚀 Quick Start
 
@@ -30,24 +39,29 @@ A professional, feature-rich Python tool for merging multiple PDF files into a s
 
 3. **Run the tool**
    ```bash
-   python -m src.pdf_merger
+   python run_pdf_merger.py
    ```
 
 ## 📖 Usage
 
 ### Running from Command Line
 
-**Method 1: As a Python Module (Recommended)**
+**Method 1: Simple Launcher Script (Recommended)**
+```cmd
+python run_pdf_merger.py
+```
+
+**Method 2: Windows Batch File**
+```cmd
+run_pdf_merger.bat
+```
+
+**Method 3: As a Python Module (from project root)**
 ```cmd
 python -m src.pdf_merger
 ```
 
-**Method 2: Using the Windows Batch File**
-```cmd
-scripts\run_pdf_merger.bat
-```
-
-**Method 3: Direct Import**
+**Method 4: Direct Import (from project root)**
 ```cmd
 python -c "import sys; sys.path.insert(0, 'src'); from pdf_merger import main; main()"
 ```
@@ -56,7 +70,7 @@ python -c "import sys; sys.path.insert(0, 'src'); from pdf_merger import main; m
 
 1. **Start the tool**
    ```bash
-   python -m src.pdf_merger
+   python run_pdf_merger.py
    ```
 
 2. **Add PDF files**
@@ -104,71 +118,59 @@ Merging PDFs...
 ✓ File size: 4.23 MB
 ```
 
-## 📁 Project Structure
-
-```
-PDF-Merger/
-├── src/
-│   └── pdf_merger/
-│       ├── __init__.py         # Package metadata and main import
-│       └── pdf_merger.py       # Main application logic
-├── tests/
-│   └── test_pdf_merger.py      # Test suite
-├── examples/
-│   └── demo_multiple_pdfs.py   # Example/demo script
-├── scripts/
-│   └── run_pdf_merger.bat      # Windows launcher
-├── docs/
-│   ├── README.md
-│   ├── QUICK_START.md
-│   └── GITHUB_SETUP.md
-├── .github/
-│   ├── workflows/
-│   │   └── python-app.yml
-│   ├── ISSUE_TEMPLATE/
-│   │   ├── bug_report.md
-│   │   └── feature_request.md
-│   └── pull_request_template.md
-├── requirements.txt
-├── setup.py
-├── pyproject.toml
-├── LICENSE
-├── CONTRIBUTING.md
-├── CHANGELOG.md
-├── .gitignore
-└── README.md                   # Project overview and navigation
-```
-
-## 📖 Documentation
-
-- **[📚 Full Documentation](docs/README.md)** - Complete user guide and API reference
-- **[⚡ Quick Start Guide](docs/QUICK_START.md)** - Get up and running in minutes
-- **[🔧 GitHub Setup](docs/GITHUB_SETUP.md)** - Repository setup instructions
-
-## 🧪 Testing
-
-```bash
-# Run the test suite
-python tests/test_pdf_merger.py
-
-# Run examples
-python examples/demo_multiple_pdfs.py
-```
-
 ## 🛠️ Development
 
-```bash
-# Install in development mode
-pip install -e .
-
-# Run with module syntax
-python -m src.pdf_merger
-
-# Run tests
-python -m pytest tests/
+### Project Structure
+```
+PDF-Merger/
+├── run_pdf_merger.py          # Main launcher script
+├── run_pdf_merger.bat         # Windows batch launcher
+├── src/
+│   └── pdf_merger/
+│       ├── __init__.py
+│       ├── __main__.py
+│       └── pdf_merger.py
+├── tests/
+│   └── test_pdf_merger.py
+├── examples/
+│   └── demo_multiple_pdfs.py
+├── docs/
+│   ├── QUICK_START.md
+│   └── GITHUB_SETUP.md
+├── scripts/
+│   └── run_pdf_merger.bat
+├── setup.py
+├── pyproject.toml
+├── requirements.txt
+└── README.md
 ```
 
-## 📦 Installation
+### Running Tests
+```bash
+python tests/test_pdf_merger.py
+```
+
+### Development Setup
+```bash
+# Clone and setup
+git clone https://github.com/siva4it/PDF-Merger.git
+cd PDF-Merger
+pip install -r requirements.txt
+
+# Run tests
+python tests/test_pdf_merger.py
+
+# Run the tool
+python run_pdf_merger.py
+```
+
+## 📋 Requirements
+
+- **Python**: 3.6 or higher
+- **PyPDF2**: >=3.0.0
+- **Operating System**: Windows, macOS, or Linux
+
+## 🔧 Installation Options
 
 ### From Source
 ```bash
@@ -177,41 +179,84 @@ cd PDF-Merger
 pip install -r requirements.txt
 ```
 
-### Using pip (when published)
+### From PyPI (Future)
 ```bash
 pip install pdf-merger-tool
-pdf-merger
 ```
+
+### Development Installation
+```bash
+git clone https://github.com/siva4it/PDF-Merger.git
+cd PDF-Merger
+pip install -e .
+```
+
+## 🎯 Key Features Explained
+
+### Multiple File Support
+- Add unlimited PDF files (minimum 2)
+- Smart input validation
+- Duplicate file detection
+- File existence verification
+
+### Custom Output Folders
+- Specify any output directory
+- Automatic folder creation
+- Permission validation
+- Full path confirmation
+
+### Professional Error Handling
+- Comprehensive error messages
+- Graceful failure recovery
+- File validation
+- Permission checking
+
+### Progress Reporting
+- Real-time status updates
+- File size and page count display
+- Merge progress indication
+- Success confirmation
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
+We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
 
+### How to Contribute
 1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🐛 Issues & Support
+## 🐛 Issues and Support
 
-- **Bug Reports**: [Create an issue](https://github.com/siva4it/PDF-Merger/issues/new?template=bug_report.md)
-- **Feature Requests**: [Suggest a feature](https://github.com/siva4it/PDF-Merger/issues/new?template=feature_request.md)
-- **Documentation**: [View docs](docs/README.md)
+- **Bug Reports**: [GitHub Issues](https://github.com/siva4it/PDF-Merger/issues)
+- **Feature Requests**: [GitHub Issues](https://github.com/siva4it/PDF-Merger/issues)
+- **Documentation**: [GitHub Wiki](https://github.com/siva4it/PDF-Merger/wiki)
 
-## 📊 Project Status
+## 📈 Roadmap
 
-- **Version**: 1.0.0
-- **Status**: Production Ready
-- **Python Support**: 3.6+
-- **Platforms**: Windows, macOS, Linux
+- [ ] GUI interface
+- [ ] Batch processing
+- [ ] PDF compression options
+- [ ] Page range selection
+- [ ] Password protection support
+- [ ] Cloud storage integration
+
+## 🙏 Acknowledgments
+
+- Built with [PyPDF2](https://pypdf2.readthedocs.io/)
+- Inspired by the need for a simple, powerful PDF merging solution
+- Thanks to all contributors and users
 
 ---
 
-⭐ **Star this repository** if you find it helpful!
+**Made with ❤️ for the Python community**
 
-🔗 **Links**: [Documentation](docs/README.md) | [Issues](https://github.com/siva4it/PDF-Merger/issues) | [Releases](https://github.com/siva4it/PDF-Merger/releases) 
+[![GitHub stars](https://img.shields.io/github/stars/siva4it/PDF-Merger.svg?style=social&label=Star)](https://github.com/siva4it/PDF-Merger)
+[![GitHub forks](https://img.shields.io/github/forks/siva4it/PDF-Merger.svg?style=social&label=Fork)](https://github.com/siva4it/PDF-Merger)
+[![GitHub issues](https://img.shields.io/github/issues/siva4it/PDF-Merger.svg)](https://github.com/siva4it/PDF-Merger/issues) 
