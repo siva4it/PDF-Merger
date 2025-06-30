@@ -8,12 +8,14 @@ import os
 
 # Read the README file
 def read_readme():
-    with open("README.md", "r", encoding="utf-8") as fh:
+    readme_path = os.path.join(os.path.dirname(__file__), "README.md")
+    with open(readme_path, "r", encoding="utf-8") as fh:
         return fh.read()
 
 # Read requirements
 def read_requirements():
-    with open("requirements.txt", "r", encoding="utf-8") as fh:
+    requirements_path = os.path.join(os.path.dirname(__file__), "requirements.txt")
+    with open(requirements_path, "r", encoding="utf-8") as fh:
         return [line.strip() for line in fh if line.strip() and not line.startswith("#")]
 
 setup(
