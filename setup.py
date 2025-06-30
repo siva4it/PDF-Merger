@@ -47,8 +47,8 @@ setup(
         "Environment :: Console",
     ],
     keywords="pdf, merge, combine, document, utility, tool",
-    packages=find_packages(),
-    py_modules=["pdf_merger"],
+    package_dir={"": "src"},
+    packages=find_packages(where="src"),
     python_requires=">=3.6",
     install_requires=read_requirements(),
     entry_points={
