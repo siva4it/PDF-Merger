@@ -24,10 +24,10 @@ setup(
     description="A simple and powerful tool to merge multiple PDF files into a single PDF",
     long_description=read_readme(),
     long_description_content_type="text/markdown",
-    url="https://github.com/your-username/PDF-Merger",
+    url="https://github.com/siva4it/PDF-Merger",
     project_urls={
-        "Bug Tracker": "https://github.com/your-username/PDF-Merger/issues",
-        "Documentation": "https://github.com/your-username/PDF-Merger#readme",
+        "Bug Tracker": "https://github.com/siva4it/PDF-Merger/issues",
+        "Documentation": "https://github.com/siva4it/PDF-Merger#readme",
     },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
@@ -60,5 +60,4 @@ setup(
     zip_safe=False,
     platforms=["any"],
     license="MIT",
-    python_requires=">=3.6",
 ) 
