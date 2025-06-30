@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pdf-merger-tool"
+version = "1.0.0"
+description = "A simple and powerful tool to merge multiple PDF files into a single PDF"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "PDF Merger Tool Contributors", email = "your-email@example.com"}
+]
+maintainers = [
+    {name = "PDF Merger Tool Contributors", email = "your-email@example.com"}
+]
+keywords = ["pdf", "merge", "combine", "document", "utility", "tool"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Office/Business",
+    "Topic :: Utilities",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Environment :: Console",
+]
+requires-python = ">=3.6"
+dependencies = [
+    "PyPDF2>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-username/PDF-Merger"
+Documentation = "https://github.com/your-username/PDF-Merger#readme"
+Repository = "https://github.com/your-username/PDF-Merger"
+"Bug Tracker" = "https://github.com/your-username/PDF-Merger/issues"
+
+[project.scripts]
+pdf-merger = "pdf_merger:main"
+
+[tool.setuptools]
+packages = ["pdf_merger"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md", "*.bat"] 
