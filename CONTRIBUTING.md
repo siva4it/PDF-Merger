@@ -54,9 +54,12 @@ python tests/test_pdf_merger.py
 
 ```
 PDF-Merger/
+├── run_pdf_merger.py          # Main launcher script
+├── run_pdf_merger.bat         # Windows batch launcher
 ├── src/
 │   └── pdf_merger/
 │       ├── __init__.py
+│       ├── __main__.py
 │       └── pdf_merger.py
 ├── tests/
 │   └── test_pdf_merger.py
@@ -65,8 +68,6 @@ PDF-Merger/
 ├── docs/
 │   ├── QUICK_START.md
 │   └── GITHUB_SETUP.md
-├── scripts/
-│   └── run_pdf_merger.bat
 ├── setup.py
 ├── pyproject.toml
 ├── requirements.txt

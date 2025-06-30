@@ -137,8 +137,6 @@ PDF-Merger/
 ├── docs/
 │   ├── QUICK_START.md
 │   └── GITHUB_SETUP.md
-├── scripts/
-│   └── run_pdf_merger.bat
 ├── setup.py
 ├── pyproject.toml
 ├── requirements.txt
