@@ -51,11 +51,11 @@ jobs:
     
     - name: Test PDF Merger functionality
       run: |
-        python test_pdf_merger.py
+        python tests/test_pdf_merger.py
     
     - name: Test script import
       run: |
-        python -c "import pdf_merger; print('Import successful')"
+        python -c "from src.pdf_merger import main; print('Import successful')"
     
     - name: Test PyPDF2 import
       run: |

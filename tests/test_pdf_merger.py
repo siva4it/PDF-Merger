@@ -20,9 +20,10 @@ def test_imports():
 def test_script_import():
     """Test that the main script can be imported."""
     try:
-        # Add current directory to path to import the script
-        sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-        import pdf_merger
+        # Add src directory to path to import the package
+        src_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src')
+        sys.path.insert(0, src_path)
+        from pdf_merger import main
         print("✓ PDF merger script imports successful")
         return True
     except ImportError as e:
@@ -66,7 +67,7 @@ def main():
     if passed == total:
         print("✓ All tests passed! The PDF merger is ready to use.")
         print("\nTo run the PDF merger:")
-        print("  python pdf_merger.py")
+        print("  python -m src.pdf_merger")
     else:
         print("✗ Some tests failed. Please check the error messages above.")
         return 1
