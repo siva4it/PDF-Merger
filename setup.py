@@ -9,14 +9,21 @@ import os
 # Read the README file
 def read_readme():
     readme_path = os.path.join(os.path.dirname(__file__), "README.md")
-    with open(readme_path, "r", encoding="utf-8") as fh:
-        return fh.read()
+    try:
+        with open(readme_path, "r", encoding="utf-8") as fh:
+            return fh.read()
+    except FileNotFoundError:
+        return "PDF Merger Tool - A simple and powerful tool to merge multiple PDF files into a single PDF"
 
 # Read requirements
 def read_requirements():
     requirements_path = os.path.join(os.path.dirname(__file__), "requirements.txt")
-    with open(requirements_path, "r", encoding="utf-8") as fh:
-        return [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+    try:
+        with open(requirements_path, "r", encoding="utf-8") as fh:
+            return [line.strip() for line in fh if line.strip() and not line.startswith("#")]
+    except FileNotFoundError:
+        # Fallback to hardcoded dependencies if requirements.txt is not found
+        return ["PyPDF2>=3.0.0"]
 
 setup(
     name="pdf-merger-tool",
