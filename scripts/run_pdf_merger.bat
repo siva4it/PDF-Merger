@@ -1,7 +1,7 @@
 @echo off
 echo Starting PDF Merger Tool...
 echo.
-python pdf_merger.py
+python -m src.pdf_merger
 echo.
 echo Press any key to exit...
 pause >nul 

@@ -68,6 +68,9 @@ def main():
         print("✓ All tests passed! The PDF merger is ready to use.")
         print("\nTo run the PDF merger:")
         print("  python -m src.pdf_merger")
+        print("\nAlternative methods:")
+        print("  scripts\\run_pdf_merger.bat  (Windows)")
+        print("  python -c \"import sys; sys.path.insert(0, 'src'); from pdf_merger import main; main()\"")
     else:
         print("✗ Some tests failed. Please check the error messages above.")
         return 1

@@ -11,29 +11,98 @@ A professional, feature-rich Python tool for merging multiple PDF files into a s
 
 ## 🚀 Quick Start
 
-```bash
-# Clone the repository
-git clone https://github.com/siva4it/PDF-Merger.git
-cd PDF-Merger
+### Prerequisites
+- Python 3.6 or higher
+- PyPDF2 library
 
-# Install dependencies
-pip install -r requirements.txt
+### Installation
 
-# Run the application
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/siva4it/PDF-Merger.git
+   cd PDF-Merger
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the tool**
+   ```bash
+   python -m src.pdf_merger
+   ```
+
+## 📖 Usage
+
+### Running from Command Line
+
+**Method 1: As a Python Module (Recommended)**
+```cmd
 python -m src.pdf_merger
 ```
 
-**Windows users**: Double-click `scripts/run_pdf_merger.bat`
+**Method 2: Using the Windows Batch File**
+```cmd
+scripts\run_pdf_merger.bat
+```
 
-## ✨ Key Features
+**Method 3: Direct Import**
+```cmd
+python -c "import sys; sys.path.insert(0, 'src'); from pdf_merger import main; main()"
+```
 
-- **Multiple PDF Support**: Merge any number of PDF files (minimum 2)
-- **Custom Output Folders**: Specify where to save merged PDFs
-- **Automatic Folder Creation**: Creates output directories if needed
-- **Smart Validation**: Comprehensive file and permission checking
-- **Cross-Platform**: Works on Windows, macOS, and Linux
-- **Professional UI**: Interactive prompts with clear feedback
-- **Detailed Reporting**: File sizes, page counts, and merge statistics
+### Interactive Usage
+
+1. **Start the tool**
+   ```bash
+   python -m src.pdf_merger
+   ```
+
+2. **Add PDF files**
+   - Enter the path to each PDF file
+   - Press Enter without a filename when done
+   - Minimum 2 files required
+
+3. **Specify output settings**
+   - Enter output folder path (optional, press Enter for current directory)
+   - Provide output filename
+
+4. **Review and confirm**
+   - Check the summary of files to merge
+   - Confirm the merge operation
+
+### Example Workflow
+
+```
+==================================================
+PDF Merger Tool
+==================================================
+
+Enter path to PDF file #1: document1.pdf
+✓ Added: document1.pdf (15 pages, 2.45 MB)
+
+Enter path to PDF file #2: document2.pdf
+✓ Added: document2.pdf (12 pages, 1.78 MB)
+
+Enter path to PDF file #3: [press Enter]
+
+Files to merge: 2
+  1. document1.pdf (15 pages)
+  2. document2.pdf (12 pages)
+
+Enter output folder path (press Enter for current directory): merged_pdfs
+✓ Created output folder: 'merged_pdfs'
+
+Enter the name for the merged PDF file: combined.pdf
+
+Output will be saved to: 'merged_pdfs/combined.pdf'
+
+Merging PDFs...
+✓ Successfully merged 2 files into 'merged_pdfs/combined.pdf'
+✓ Total pages: 27
+✓ File size: 4.23 MB
+```
 
 ## 📁 Project Structure
 
